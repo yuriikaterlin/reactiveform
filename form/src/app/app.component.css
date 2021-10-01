@@ -1,0 +1,28 @@
+.flexbox-parent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+}
+
+.form-field-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.radio-group-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.button-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.mat-radio-button ~ .mat-radio-button {
+    margin-left: 16px;
+  }

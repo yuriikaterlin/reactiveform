@@ -1,0 +1,45 @@
+
+<div class="flexbox-parent">
+
+  <div>
+    <h3 class="title">Form Field</h3>
+  </div>
+  
+ <form [formGroup]="newForm" (ngSubmit)='submit()' >
+  <div class="form-field-wrapper">
+    <mat-form-field appearance="fill">
+      <mat-label>Enter First Name</mat-label>
+      <input matInput formControlName='firstName'>
+      <mat-error *ngIf="firstName.invalid" >Name is required with 10 max character.</mat-error>
+    </mat-form-field>
+  </div>
+  <div class="form-field-wrapper">
+    <mat-form-field appearance="fill">
+      <mat-label>Enter Last Name</mat-label>
+      <input matInput formControlName='lastName'>
+      <mat-error *ngIf="lastName.invalid" ></mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="form-field-wrapper">
+    <mat-form-field appearance="fill">
+      <mat-label>Enter your email</mat-label>
+      <input matInput placeholder="your@example.com" formControlName="email" required>
+    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+  </div>
+
+    <div class="radio-group-wrapper">
+      <mat-radio-group aria-label="Select an option" formControlName='gender'>
+        <mat-radio-button  value="Male">Male</mat-radio-button>
+        <mat-radio-button  value="Female">Female</mat-radio-button>
+      </mat-radio-group>
+    </div>
+
+    <div class="button-wrapper">
+      <button mat-raised-button color="accent" type="submit" [disabled]='newForm.invalid'>Submit</button>
+    </div>
+  </form>
+</div> 
+
+  <router-outlet></router-outlet>
